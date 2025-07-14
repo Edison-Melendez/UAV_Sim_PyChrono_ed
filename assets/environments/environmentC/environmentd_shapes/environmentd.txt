@@ -23,8 +23,8 @@
          -Top Plane [RefPlane]
          -Right Plane [RefPlane]
          -Origin [OriginProfileFeature]
-         -targets-1 [Reference]
+         -target1-1 [Reference]
          -Mates [MateGroup]
-   +targets-1 <Default>
+   +target1-1 <Default>
            -Comments [CommentsFolder]
-           -Sketch2 [ProfileFeature]
+           -Sketch1 [ProfileFeature]
