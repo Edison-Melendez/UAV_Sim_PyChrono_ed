@@ -11,7 +11,7 @@ chrono.ChCollisionModel.SetDefaultSuggestedEnvelope(0.003)
 chrono.ChCollisionModel.SetDefaultSuggestedMargin(0.003)
 chrono.ChCollisionSystemBullet.SetContactBreakingThreshold(0.002)
 
-shapes_dir = 'C_shapes/' 
+shapes_dir = 'environmentd_shapes/' 
 
 if hasattr(builtins, 'exported_system_relpath'): 
     shapes_dir = builtins.exported_system_relpath + shapes_dir 
@@ -25,13 +25,13 @@ exported_items.append(body_0)
 
 # Rigid body part
 body_1 = chrono.ChBodyAuxRef()
-body_1.SetName('Part4-1')
-body_1.SetPos(chrono.ChVector3d(-0.0189480094685964,0.00897666134795354,0.00389999507744124))
+body_1.SetName('targets-1')
+body_1.SetPos(chrono.ChVector3d(0.0247466800994952,-0.0920622283625694,0.0494872334204122))
 body_1.SetRot(chrono.ChQuaterniond(1,0,0,0))
-body_1.SetMass(0.111457117211815)
-body_1.SetInertiaXX(chrono.ChVector3d(1.96862738752625e-05,4.40197496377418e-05,3.63180880525416e-05))
-body_1.SetInertiaXY(chrono.ChVector3d(0,-1.61332466129364e-21,0))
-body_1.SetFrameCOMToRef(chrono.ChFramed(chrono.ChVector3d(0.0285701636493004,0.0127,0.0191986801976524),chrono.ChQuaterniond(1,0,0,0)))
+body_1.SetMass(0.234296663780861)
+body_1.SetInertiaXX(chrono.ChVector3d(0.00120085178937056,0.00026194897355314,0.00127315621026146))
+body_1.SetInertiaXY(chrono.ChVector3d(1.09919922453984e-05,5.78625351882856e-06,3.77258601486936e-06))
+body_1.SetFrameCOMToRef(chrono.ChFramed(chrono.ChVector3d(0.00539971402491222,0.145046170261709,0.00340582172789345),chrono.ChQuaterniond(1,0,0,0)))
 body_1.SetFixed(True)
 
 # Visualization shape 
