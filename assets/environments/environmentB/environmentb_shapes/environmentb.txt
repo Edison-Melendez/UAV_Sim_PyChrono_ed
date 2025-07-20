@@ -27,4 +27,4 @@
          -Mates [MateGroup]
    +PART6copy-1 <Default>
            -Comments [CommentsFolder]
-           -Sketch1 [ProfileFeature]
+           -Sketch3 [ProfileFeature]

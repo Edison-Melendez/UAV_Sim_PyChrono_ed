@@ -26,12 +26,12 @@ exported_items.append(body_0)
 # Rigid body part
 body_1 = chrono.ChBodyAuxRef()
 body_1.SetName('PART6copy-1')
-body_1.SetPos(chrono.ChVector3d(0.714241220616957,-1.30316921001658,0.508458570624162))
+body_1.SetPos(chrono.ChVector3d(1.17775433620075,-0.906345478931787,-0.00572716948595947))
 body_1.SetRot(chrono.ChQuaterniond(1,0,0,0))
-body_1.SetMass(1708.09026322365)
-body_1.SetInertiaXX(chrono.ChVector3d(1070.72372660483,2216.55663865616,3061.15165781907))
-body_1.SetInertiaXY(chrono.ChVector3d(-116.107297420538,47.7396194647747,-8.00604197440933))
-body_1.SetFrameCOMToRef(chrono.ChFramed(chrono.ChVector3d(-0.754710739461517,1.18384849789234,-0.145420218829621),chrono.ChQuaterniond(1,0,0,0)))
+body_1.SetMass(1110.06670500994)
+body_1.SetInertiaXX(chrono.ChVector3d(715.017018658678,1916.77945460426,2449.36792459883))
+body_1.SetInertiaXY(chrono.ChVector3d(-70.3897759581321,99.9906460281766,0.464904551916506))
+body_1.SetFrameCOMToRef(chrono.ChFramed(chrono.ChVector3d(-0.929994054206124,1.12218879653754,-0.167326024110134),chrono.ChQuaterniond(1,0,0,0)))
 body_1.SetFixed(True)
 
 # Visualization shape 
