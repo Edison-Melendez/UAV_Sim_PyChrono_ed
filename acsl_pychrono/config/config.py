@@ -8,7 +8,7 @@ class MissionConfig:
   # Run the simulator in Wrapper mode (more simulations automatically run sequentially)
   wrapper_flag: bool = False
   # If True, perform real-time rendering of the simulation with Irrlicht
-  visualization_flag: bool = False
+  visualization_flag: bool = True
   # Dynamic camera options:
   # "fixed"
   # "default",
@@ -64,9 +64,9 @@ class VehicleConfig:
 @dataclass
 class EnvironmentConfig:
   # Include external environment in the simulation
-  include: bool = False
+  include: bool = True
   # Path relative to 'current_working_directory/assets/environments'
-  model_relative_path: str = "environmentA/environmentA.py" 
+  model_relative_path: str = "environmentC/environmentc.py" 
 
 @dataclass
 class WrapperParams: # Add here the params to be sweeped by the wrapper with their default values
