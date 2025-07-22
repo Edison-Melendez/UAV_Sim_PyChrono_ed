@@ -66,7 +66,7 @@ class EnvironmentConfig:
   # Include external environment in the simulation
   include: bool = True
   # Path relative to 'current_working_directory/assets/environments'
-  model_relative_path: str = "environmentC/environmentc.py" 
+  model_relative_path: str = "environmentB/environmentb.py" 
 
 @dataclass
 class WrapperParams: # Add here the params to be sweeped by the wrapper with their default values

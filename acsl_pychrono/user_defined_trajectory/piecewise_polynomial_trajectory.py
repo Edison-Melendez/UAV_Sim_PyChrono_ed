@@ -8,6 +8,7 @@ from acsl_pychrono.config.config import MissionConfig
 from acsl_pychrono.simulation.flight_params import FlightParams
 from acsl_pychrono.user_defined_trajectory.trajectory_auxillary import TrajectoryAuxillary
 from acsl_pychrono.user_defined_trajectory.base_user_defined_trajectory import BaseUserDefinedTrajectory
+import csv
 
 class PiecewisePolynomialTrajectory(BaseUserDefinedTrajectory):
   def __init__(
@@ -206,6 +207,8 @@ class PiecewisePolynomialTrajectory(BaseUserDefinedTrajectory):
           )
         )
       )
+  
+
     
     # Create a ChLineShape, a visualization asset for lines.
     # The ChLinePath is a special type of ChLine and it can be visualized.
