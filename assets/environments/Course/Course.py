@@ -15,7 +15,7 @@ exported_items = []
 
 # === Ground Body ===
 body_0 = chrono.ChBodyAuxRef()
-body_0.SetName('SLDW_GROUND')
+body_0.SetName('ground')
 body_0.SetBodyFixed(True)
 exported_items.append(body_0)
 

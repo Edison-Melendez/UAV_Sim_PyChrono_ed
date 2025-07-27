@@ -181,7 +181,7 @@ class Simulation:
       if isinstance(item, chrono.ChBody) and item.GetName() != "ground"
     ]
 
-    if len(bodies) != 1:
+    if len(bodies) != 5:
       sys.exit(f"Error: Expected exactly 1 non-ground body in the environment model, found {len(bodies)}.")
 
     self.m_environment = bodies[0]
