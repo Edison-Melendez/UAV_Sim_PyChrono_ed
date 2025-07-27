@@ -35,10 +35,12 @@ class MissionConfig:
 
   # If the trajectory_type is "piecewise_polynomial_trajectory", then choose the trajectory file to run
   # Path relative to 'current_working_directory/params/user_defined_trajectory'
-  trajectory_data_path: str = "bean_trajectory0p6.json"
+  trajectory_data_path: str = "acrobatic_trajectory.json"
+  # acrobatic_trajectory
+  # loopy_loop_trajectory
 
   # Flag to add or remove the payload from the simulation
-  add_payload_flag: bool = True
+  add_payload_flag: bool = False
   # Payload types: 
   # "two_steel_balls"
   # "ten_steel_balls_in_two_lines"
@@ -64,7 +66,7 @@ class VehicleConfig:
 @dataclass
 class EnvironmentConfig:
   # Include external environment in the simulation
-  include: bool = True
+  include: bool = False
   # Path relative to 'current_working_directory/assets/environments'
   model_relative_path: str = "environmentB/environmentb.py" 
 
