@@ -17,6 +17,7 @@ exported_items = []
 body_0 = chrono.ChBodyAuxRef()
 body_0.SetName('ground')
 body_0.SetBodyFixed(True)
+
 exported_items.append(body_0)
 
 # === Body: pillar_3-1 ===
@@ -134,7 +135,7 @@ exported_items.append(body_4)
 # === Body: pillar_2-1 ===
 body_5 = chrono.ChBodyAuxRef()
 body_5.SetName('pillar_2-1')
-body_5.SetPos(chrono.ChVectorD(1.552935330011, -1.3061538871075, 0.604368712017313))
+body_5.SetPos(chrono.ChVectorD(1.552935330011, -1.3061538871075, 0.504368712017313))
 body_5.SetRot(chrono.ChQuaternionD(1, 0, 0, 0))
 body_5.SetMass(1784.14127094109)
 body_5.SetInertiaXX(chrono.ChVectorD(1009.07756474951, 99.7274922317594, 1009.07756474951))
