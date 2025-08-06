@@ -1,0 +1,108 @@
+# Collision Shape Creation Guide (SolidWorks → Chrono)
+
+This guide explains how to create a collision shape for use in PyChrono from a SolidWorks model.
+
+## 1. Make Your Shape a Solid Body
+1. In **SolidWorks**, ensure your object is a **solid body** (not just a surface).
+2. Verify that it has the correct scale and orientation.
+
+## 2. Create a Copy of the Shape
+1. Go to **Insert → Features → Move/Copy**.
+2. Use **Move/Copy** to create a **duplicate** of your shape.
+3. This duplicate will be used as the collision shape.
+
+## 3. Assign a Collision Shape with the Chrono Extension
+1. With the **Chrono SolidWorks Add-in** enabled:
+   - Select the **newly created copy** (not the original).
+   - In the Chrono panel, choose **Create Mesh** or **Create Primitive** for collision.
+2. This tells Chrono how to treat the shape in physics simulations.
+
+## 4. Send the Collision Shape to the Assembly
+1. Add the collision shape to your **assembly** alongside your main part.
+2. Make sure both the **visual shape** (original) and **collision shape** (copy) are present in the assembly.
+
+## 5. Export to PyChrono
+1. Use the Chrono add-in to **export** the assembly to a `.py` script.
+2. The **Course** example file shows how your script should be structured.
+3. Note: A converter tool is in the works to automate parts of this process.
+
+---
+
+**Tips & Notes:**
+- Keep your collision geometry simple — avoid unnecessary detail in the collision mesh to improve simulation performance.
+- In the **Course** example, collision blocks are **extruded 100 inches** in SolidWorks before export.  
+  - This ensures consistent block height in PyChrono.
+  - You should maintain this extrusion length for new course elements unless a different scale is intended.
+
+# Trajectory Generation Guide (MATLAB)
+
+This guide explains how to generate UAV trajectories using the provided MATLAB script. The planner uses a minimum-jerk polynomial to compute smooth flight paths, and allows you to control timing, scaling, and resolution of the trajectory.
+
+## 1. `traj.wpts_nt` – Define Waypoints
+
+Specifies the 3D path the UAV should follow.
+
+- Each row defines a waypoint in `[x y z]` format.
+- Coordinates are in meters (or your simulation's units).
+
+**Example:**
+
+```matlab
+traj.wpts_nt = [
+    0.0  0.0   0.0;
+    1.0  0.5  -0.5;
+    2.0  1.0  -1.0
+];
+```
+
+## 2. `traj.segment_relative_times` – Set Segment Durations
+
+Controls how long the UAV takes to travel between waypoints.
+
+- The first value must always be `0`.
+- Each subsequent value is the duration from the previous waypoint to the current one.
+- The number of values must match the number of waypoints.
+
+**Example:**
+
+```matlab
+traj.segment_relative_times = [0; 3; 4];  % 3 seconds for segment 1, 4 seconds for segment 2
+```
+
+## 3. `traj.alphaFactor` – Global Time Scaling
+
+Scales the entire trajectory in time.
+
+- `alphaFactor < 1` speeds up the motion.
+- `alphaFactor > 1` slows it down.
+- Use this to keep velocity and acceleration within feasible limits.
+
+**Example:**
+
+```matlab
+traj.alphaFactor = 1.2;  % Slows down trajectory by 20%
+```
+
+## 4. `traj.numsamples` (Optional) – Evaluation Resolution
+
+Controls the number of points used to evaluate and plot the trajectory.
+
+- Default is 200.
+- Increase for smoother curves or finer resolution.
+
+**Example:**
+
+```matlab
+traj.numsamples = 400;
+```
+
+## 5. Workflow Summary
+
+- Edit the following inputs in the MATLAB script:
+  - `traj.wpts_nt`
+  - `traj.segment_relative_times`
+  - `traj.alphaFactor`
+  - (optional) `traj.numsamples`
+- Run the script to generate and visualize the trajectory.
+- Check velocity and acceleration plots for feasibility.
+- Export to JSON for simulation use if needed.
