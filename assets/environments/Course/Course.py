@@ -116,7 +116,7 @@ body_4.SetFrame_COG_to_REF(chrono.ChFrameD(chrono.ChVectorD(0.428832936240346, 1
 body_4.SetBodyFixed(True)
 
 visual_mesh4 = chrono.ChTriangleMeshConnected()
-visual_mesh4.LoadWavefrontMesh(shapes_dir + 'body_4_1.obj')
+visual_mesh4.LoadWavefrontMesh(shapes_dir + 'body_4_1.obj')1
 visual_shape4 = chrono.ChTriangleMeshShape()
 visual_shape4.SetMesh(visual_mesh4)
 visual_shape4.SetColor(chrono.ChColor(0.96, 0.96, 0.86))

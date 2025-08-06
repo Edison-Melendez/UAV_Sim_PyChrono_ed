@@ -4,7 +4,7 @@ from dataclasses import dataclass
 @dataclass
 class MissionConfig:
   # Total simulation duration in seconds
-  simulation_duration_seconds: float = 21.5 # 21.5
+  simulation_duration_seconds: float = 15 # 21.5
   # Run the simulator in Wrapper mode (more simulations automatically run sequentially)
   wrapper_flag: bool = False
   # If True, perform real-time rendering of the simulation with Irrlicht
